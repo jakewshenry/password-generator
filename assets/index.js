@@ -116,12 +116,47 @@ var specialCharacters = [
   
   // Function for getting a random element from an array
   function getRandom(arr) {
-  
+    return arr[Math.floor(Math.random() * arr.length)];
   }
-  
+
   // Function to generate password with user input
   function generatePassword() {
+    var options = getPasswordOptions();
   
+    if (!options) {
+      return;
+    }
+  
+    var result = [];
+    var possibleCharacters = [...lowerCasedCharacters];
+    var outputGeneratedPassword = [];
+  
+    outputGeneratedPassword.push(getRandom(lowerCasedCharacters));
+  
+    if (options.passwordSpecialCharacters) {
+      possibleCharacters.push(...specialCharacters);
+      outputGeneratedPassword.push(getRandom(specialCharacters));
+    }
+  
+    if (options.passwordNumbers) {
+      possibleCharacters.push(...numericCharacters);
+      outputGeneratedPassword.push(getRandom(numericCharacters));
+    }
+  
+    if (options.passwordCapitalLetters) {
+      possibleCharacters.push(...upperCasedCharacters);
+      outputGeneratedPassword.push(getRandom(upperCasedCharacters));
+    }
+  
+    for (var i = outputGeneratedPassword.length; i < options.length; i++) {
+      result.push(getRandom(possibleCharacters));
+    }
+  
+    for (var i = 0; i < outputGeneratedPassword.length; i++) {
+      result[i] = outputGeneratedPassword[i];
+    }
+  
+    return result.join('');
   }
   
   // Get references to the #generate element
