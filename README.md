@@ -36,8 +36,8 @@ SO THAT I can ensure users of my applications have the option to improve their o
 
 Link to deployed application - https://jakewshenry.github.io/password-generator/
 
- ![Screenshot of console](./assets/images/SS1.png)
- ![Screenshot of console 2](./assets/images/SS2.png)
+ ![Screenshot of application](./assets/images/SS1.png)
+ ![Screenshot of application 2](./assets/images/SS2.png)
 
 ## Credits
 
