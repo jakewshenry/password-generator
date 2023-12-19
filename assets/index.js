@@ -90,7 +90,28 @@ var specialCharacters = [
   
   // Function to prompt user for password options
   function getPasswordOptions() {
+    var length = parseInt(prompt('Enter a number between 8 and 128 for your password length:'));
+
+    if (isNaN(length) || length < 8 || length > 128) {
+      alert('Invalid password length, please enter a valid length of between 8 and 128 characters.');
+      return;
+    }
   
+    var includeCapitalLetters = confirm('Do you want to include capital letters?');
+    var includeNumbers = confirm('Do you want to include numbers?');
+    var includeSpecialCharacters = confirm('Do you want to include special characters?');
+  
+    if (!includeCapitalLetters && !includeNumbers && !includeSpecialCharacters) {
+      alert('At least one character type should be selected.');
+      return;
+    }
+  
+    return {
+      length,
+      includeCapitalLetters,
+      includeNumbers,
+      includeSpecialCharacters
+    };
   }
   
   // Function for getting a random element from an array
