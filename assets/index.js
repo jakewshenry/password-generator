@@ -128,32 +128,32 @@ var specialCharacters = [
     }
   
     var result = [];
-    var possibleCharacters = [...lowerCasedCharacters];
-    var outputGeneratedPassword = [];
+    var possibleChars = [...lowerCasedCharacters];
+    var generatedPassword = [];
   
-    outputGeneratedPassword.push(getRandom(lowerCasedCharacters));
+    generatedPassword.push(getRandom(lowerCasedCharacters));
   
     if (options.passwordSpecialCharacters) {
-      possibleCharacters.push(...specialCharacters);
-      outputGeneratedPassword.push(getRandom(specialCharacters));
+      possibleChars.push(...specialCharacters);
+      generatedPassword.push(getRandom(specialCharacters));
     }
   
     if (options.passwordNumbers) {
-      possibleCharacters.push(...numericCharacters);
-      outputGeneratedPassword.push(getRandom(numericCharacters));
+      possibleChars.push(...numericCharacters);
+      generatedPassword.push(getRandom(numericCharacters));
     }
   
     if (options.passwordCapitalLetters) {
-      possibleCharacters.push(...upperCasedCharacters);
-      outputGeneratedPassword.push(getRandom(upperCasedCharacters));
+      possibleChars.push(...upperCasedCharacters);
+      generatedPassword.push(getRandom(upperCasedCharacters));
     }
   
-    for (var i = outputGeneratedPassword.length; i < options.length; i++) {
-      result.push(getRandom(possibleCharacters));
+    for (var i = generatedPassword.length; i < options.length; i++) {
+      result.push(getRandom(possibleChars));
     }
   
-    for (var i = 0; i < outputGeneratedPassword.length; i++) {
-      result[i] = outputGeneratedPassword[i];
+    for (var i = 0; i < generatedPassword.length; i++) {
+      result[i] = generatedPassword[i];
     }
   
     return result.join('');
@@ -167,7 +167,11 @@ var specialCharacters = [
     var password = generatePassword();
     var passwordText = document.querySelector('#password');
   
-    passwordText.value = password;
+    if (password) {
+      passwordText.value = password;
+    } else {
+      passwordText.value = 'Could not generate a password, please try again.';
+    }
   }
   
   // Add event listener to generate button
