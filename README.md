@@ -36,7 +36,8 @@ SO THAT I can ensure users of my applications have the option to improve their o
 
 Link to deployed application - 
 
- ![Screenshot of console](
+ ![Screenshot of console](./assets/images/SS1.png)
+ ![Screenshot of console 2](./assets/images/SS2.png)
 
 ## Credits
 
@@ -44,7 +45,14 @@ This project was completed as part of an edX BootCamp coding challenge.
 
 edX module slides - https://bootcampspot.instructure.com/courses/5076/modules
 
-GitHub Pages: https://coding-boot-camp.github.io/full-stack/github/professional-readme-guide (README guidance)
+GitHub Pages README: https://coding-boot-camp.github.io/full-stack/github/professional-readme-guide
+
+MDN Spread Operator: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
+
+MDN Functions: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions
+
+MDN If else statements - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else
+
 
 ## License
 
